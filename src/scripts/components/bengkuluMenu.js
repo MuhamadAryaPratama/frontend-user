@@ -5,7 +5,7 @@ class BengkuluMenu extends HTMLElement {
 
   async fetchData() {
     try {
-      const response = await fetch("http://93.127.215.107:4000/bengkulu");
+      const response = await fetch("http://93.127.215.107:3000/bengkulu");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

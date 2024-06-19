@@ -5,7 +5,7 @@ class GorontaloMenu extends HTMLElement {
 
   async fetchData() {
     try {
-      const response = await fetch("http://93.127.215.107:4000/gorontalo");
+      const response = await fetch("http://93.127.215.107:3000/gorontalo");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
