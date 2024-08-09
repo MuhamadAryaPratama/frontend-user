@@ -20,36 +20,46 @@ class AcehMenu extends HTMLElement {
   }
 
   render(menus) {
-    this.innerHTML = `
+    if (!menus || menus.length === 0) {
+      this.innerHTML = `
         <div class="container">
           <h1>Nanggroe Aceh Darussalam Menu</h1>
-          <ul>
-            ${menus
-              .map(
-                (menu) => `
-                <li class="menu-item">
-                  <div class="menu-item-text">
-                    <h2>Nama Restoran: ${menu.restaurant_name}</h2>
-                    <p>${menu.description}</p>
-                    <p><i class="bi bi-geo-alt-fill"></i> <a href="${menu.google_maps_link}" target="_blank">Google Maps</a></p>
-                    <p><i class="bi bi-star-fill"></i> ${menu.rating}</p>
-                  </div>
-                </li>
-              `
-              )
-              .join("")}
-          </ul>
+          <p>No menu items available at this time.</p>
         </div>
       `;
+      return;
+    }
+
+    this.innerHTML = `
+      <div class="container">
+        <h1>Nanggroe Aceh Darussalam Menu</h1>
+        <ul>
+          ${menus
+            .map(
+              (menu) => `
+              <li class="menu-item">
+                <div class="menu-item-text">
+                  <h2>Nama Restoran: ${menu.restaurant_name}</h2>
+                  <p>${menu.description}</p>
+                  <p><i class="bi bi-geo-alt-fill"></i> <a href="${menu.google_maps_link}" target="_blank">Google Maps</a></p>
+                  <p><i class="bi bi-star-fill"></i> ${menu.rating}</p>
+                </div>
+              </li>
+            `
+            )
+            .join("")}
+        </ul>
+      </div>
+    `;
   }
 
   renderError(error) {
     this.innerHTML = `
-        <div class="container">
-          <h1>Error Loading Nanggroe Aceh Darussalam Menu</h1>
-          <p>Error: ${error.message}</p>
-        </div>
-      `;
+      <div class="container">
+        <h1>Error Loading Nanggroe Aceh Darussalam Menu</h1>
+        <p>Error: ${error.message}</p>
+      </div>
+    `;
   }
 }
 
