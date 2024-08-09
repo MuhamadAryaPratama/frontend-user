@@ -5,7 +5,9 @@ class BantenMenu extends HTMLElement {
 
   async fetchData() {
     try {
-      const response = await fetch("http://93.127.215.107:3000/banten");
+      const response = await fetch(
+        "https://api-project-psi-navy.vercel.app/banten"
+      );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

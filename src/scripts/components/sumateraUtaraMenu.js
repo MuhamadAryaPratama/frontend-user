@@ -5,7 +5,9 @@ class SumateraUtaraMenu extends HTMLElement {
 
   async fetchData() {
     try {
-      const response = await fetch("http://93.127.215.107:3000/sumaterautara");
+      const response = await fetch(
+        "https://api-project-psi-navy.vercel.app/sumaterautara"
+      );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

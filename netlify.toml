@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/api/*"
-  to = "http://93.127.215.107:3000/:splat"
+  to = "https://api-project-psi-navy.vercel.app/"
   status = 200
   force = true
   headers = {Access-Control-Allow-Origin = "*"}

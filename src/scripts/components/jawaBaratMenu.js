@@ -5,7 +5,9 @@ class JawaBaratMenu extends HTMLElement {
 
   async fetchData() {
     try {
-      const response = await fetch("http://93.127.215.107:3000/jawabarat");
+      const response = await fetch(
+        "https://api-project-psi-navy.vercel.app/jawabarat"
+      );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
